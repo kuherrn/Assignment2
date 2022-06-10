@@ -23,7 +23,7 @@
             @Html.DisplayFor(model => model.operatingYears)
         </dd>
     </dl>
-    @if (Model.Restaurant.Any()) {
+    @if (Model.franchiseLocation.Any()) {
         <table class="table">
             <thead>
                 <tr>
@@ -33,19 +33,17 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var restaurant in Model.Restaurant) {
+                @foreach (var restaurant in Model.franchiseLocation) {
                 <tr>
                     <td>@Html.DisplayFor(modelItem => restaurant.foodName)</td>
                     <td>@Html.DisplayFor(modelItem => restaurant.foodPrice)</td>
                     <td>@Html.DisplayFor(modelItem => restaurant.foodQuantity)</td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", "Restaurant", new { id = Restaurant.id })
-                        @Html.ActionLink("Details", "Details", "Restaurant", new { id = Restaurant.id })
-                        @Html.ActionLink("Delete", "Delete", "Restaurant", new { id = Restaurant.id })
+                        @Html.ActionLink("Edit", "Edit", "Restaurant", new { id = restaurant.ID })
+                        @Html.ActionLink("Details", "Details", "Restaurant", new { id = restaurant.ID })
+                        @Html.ActionLink("Delete", "Delete", "Restaurant", new { id = restaurant.ID })
                     </td>
-                </tr>
-                    
-
+                </tr>                
                  }
             </tbody>
         </table>

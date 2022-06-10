@@ -19,7 +19,7 @@ namespace Week5.Controllers
             _context = context;
         }
 
-        // GET: Province
+        // GET: Provinces
         public async Task<IActionResult> Index()
         {
               return _context.Province != null ? 
