@@ -48,7 +48,7 @@ namespace Week5.Controllers
         // GET: Restaurants/Create
         public IActionResult Create()
         {
-            ViewData["ProvinceId"] = new SelectList(_context.Set<Province>(), "Id", "Id");
+            ViewData["ProvinceId"] = new SelectList(_context.Province, "Id", "Id");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace Week5.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,foodName,foodPrice,foodQuantity,ProvinceId")] Restaurant restaurant)
+        public async Task<IActionResult> Create([Bind("ID,restaurantName,foodName,foodPrice,foodQuantity,ProvinceId")] Restaurant restaurant)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace Week5.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProvinceId"] = new SelectList(_context.Set<Province>(), "Id", "Id", restaurant.ProvinceId);
+            ViewData["ProvinceId"] = new SelectList(_context.Province, "Id", "Id", restaurant.ProvinceId);
             return View(restaurant);
         }
 
@@ -82,7 +82,7 @@ namespace Week5.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProvinceId"] = new SelectList(_context.Set<Province>(), "Id", "Id", restaurant.ProvinceId);
+            ViewData["ProvinceId"] = new SelectList(_context.Province, "Id", "Id", restaurant.ProvinceId);
             return View(restaurant);
         }
 
@@ -91,7 +91,7 @@ namespace Week5.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,foodName,foodPrice,foodQuantity,ProvinceId")] Restaurant restaurant)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,restaurantName,foodName,foodPrice,foodQuantity,ProvinceId")] Restaurant restaurant)
         {
             if (id != restaurant.ID)
             {
@@ -118,7 +118,7 @@ namespace Week5.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProvinceId"] = new SelectList(_context.Set<Province>(), "Id", "Id", restaurant.ProvinceId);
+            ViewData["ProvinceId"] = new SelectList(_context.Province, "Id", "Id", restaurant.ProvinceId);
             return View(restaurant);
         }
 

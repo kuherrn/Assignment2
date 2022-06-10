@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.restaurantName)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.foodName)
             </th>
             <th>
@@ -30,6 +33,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.restaurantName)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.foodName)
             </td>
