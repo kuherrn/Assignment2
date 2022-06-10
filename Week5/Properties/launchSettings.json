@@ -1,0 +1,33 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:63128",
+      "sslPort": 44395
+    }
+  },
+  "profiles": {
+    "Week5": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "https://localhost:7288/Restaurants",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AZURE_USERNAME": "200479344@student.georgianc.on.ca",
+        "VaultUri": "https://comp2094assignment2vault.vault.azure.net/"
+      },
+      "applicationUrl": "https://localhost:7288;http://localhost:5288",
+      "dotnetRunMessages": true
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AZURE_USERNAME": "200479344@student.georgianc.on.ca",
+        "VaultUri": "https://comp2094assignment2vault.vault.azure.net/"
+      }
+    }
+  }
+}

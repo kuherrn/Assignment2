@@ -1,0 +1,57 @@
+﻿@model Week5.Controllers.ProvinceViewModel;
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Province</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.operatingYears)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.operatingYears)
+        </dd>
+    </dl>
+    @if (Model.Restaurant.Any()) {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>foodName</th>
+                    <th>foodPrice</th>
+                    <th>foodQuantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var restaurant in Model.Restaurant) {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => restaurant.foodName)</td>
+                    <td>@Html.DisplayFor(modelItem => restaurant.foodPrice)</td>
+                    <td>@Html.DisplayFor(modelItem => restaurant.foodQuantity)</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Restaurant", new { id = Restaurant.id })
+                        @Html.ActionLink("Details", "Details", "Restaurant", new { id = Restaurant.id })
+                        @Html.ActionLink("Delete", "Delete", "Restaurant", new { id = Restaurant.id })
+                    </td>
+                </tr>
+                    
+
+                 }
+            </tbody>
+        </table>
+     }
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
