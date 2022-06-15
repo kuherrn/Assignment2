@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Week5</title>
+    <title>@ViewData["Title"] - Restaurant Database</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Week5.styles.css" asp-append-version="true" />
@@ -23,7 +23,11 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Provinces" asp-action="Index">Provinces</a>
                         </li>
                     </ul>
-                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav flex-grow-4 align-self-md-center">                  
+                        <li class="nav-item">
+                            A place to see your restaurant businesses!
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -36,7 +40,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - Week5 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            Kuherrn Nagayaindran | 200479344 | COMP 2084 | Server-Side Scripting ASP.NET
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

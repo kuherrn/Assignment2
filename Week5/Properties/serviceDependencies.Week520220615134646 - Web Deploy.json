@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "secrets2": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.KeyVault/vaults/COMP2094Assignment2vault",
+      "type": "secrets.keyVault",
+      "connectionId": "VaultUri",
+      "dynamicId": null
+    },
+    "mssql2": {
+      "secretStore": "AzureKeyVault",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/comp2018inclass/databases/COMP2084-DB-In-Class",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:Assignment2DB"
+    }
+  }
+}
