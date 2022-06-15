@@ -82,7 +82,8 @@ namespace Week5.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProvinceId"] = new SelectList(_context.Province, "Id", "Id", restaurant.ProvinceId);
+            // Trying to select Provinces instead of Id
+            ViewData["ProvinceId"] = new SelectList(_context.Province, "Id", "Name", restaurant.ProvinceId);
             return View(restaurant);
         }
 

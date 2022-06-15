@@ -3,7 +3,8 @@
 namespace Week5.Models {
     public class Province {
         [Key]
-        public int Id { get; set; } 
+        public int Id { get; set; }
+        [Required]
         public string Name { get; set; }    
         public int operatingYears { get; set; }
         public ICollection<Restaurant>? franchiseLocation { get; set; }

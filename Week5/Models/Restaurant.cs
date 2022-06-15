@@ -11,7 +11,7 @@ namespace Week5.Models
         public string restaurantName { get; set; }
         public string foodName { get; set; }
         [Required] 
-        public int foodPrice { get; set; }
+        public float foodPrice { get; set; }
         [Required]
         public int foodQuantity { get; set; }
         [ForeignKey("Province")]

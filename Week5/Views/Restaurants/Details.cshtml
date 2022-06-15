@@ -39,7 +39,7 @@
         </dt>
         <dd class = "col-sm-10">
             @if(Model.province != null) {
-                @Html.ActionLink(Model.province.Name, "Details", "Engines", new { id = Model.ProvinceId})
+                @Html.ActionLink(Model.province.Name, "Details", "Provinces", new { id = Model.ProvinceId})
             }
         </dd>
     </dl>
