@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -54,6 +55,7 @@ namespace Week5.Controllers
         }
 
         // GET: Provinces/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -64,6 +66,7 @@ namespace Week5.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create([Bind("Id,Name,operatingYears")] Province province)
         {
             if (ModelState.IsValid)
@@ -76,6 +79,7 @@ namespace Week5.Controllers
         }
 
         // GET: Provinces/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Province == null)
@@ -96,6 +100,7 @@ namespace Week5.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,operatingYears")] Province province)
         {
             if (id != province.Id)
@@ -127,6 +132,7 @@ namespace Week5.Controllers
         }
 
         // GET: Provinces/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Province == null)
@@ -147,6 +153,7 @@ namespace Week5.Controllers
         // POST: Provinces/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Province == null)
