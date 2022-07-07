@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Week5.Models.Restaurant>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model IEnumerable<Week5.Models.Restaurant>
 
 @{
     ViewData["Title"] = "Index";
@@ -7,7 +10,9 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    @if(User.Identity != null && User.Identity.IsAuthenticated) {
+        <a asp-action="Create">Create New</a>
+    }
 </p>
 <table class="table">
     <thead>

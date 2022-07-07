@@ -14,10 +14,12 @@ namespace Week5.Controllers
     public class RestaurantsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<RestaurantsController> _logger;
 
-        public RestaurantsController(ApplicationDbContext context)
+        public RestaurantsController(ApplicationDbContext context, ILogger<RestaurantsController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: Restaurants
